@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://c82x7e80ywuhg"]
+
+[ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1_neouw"]
+[ext_resource type="Theme" uid="uid://bmhpd1nx43yx2" path="res://UI/themes/Main_theme.tres" id="2_7n5ke"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_neouw")
+
+[node name="Play" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 476.0
+offset_top = 325.0
+offset_right = 676.0
+offset_bottom = 365.0
+theme = ExtResource("2_7n5ke")
+text = "Play"
+
+[node name="Level_select" type="Button" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 375.0
+offset_right = 676.0
+offset_bottom = 415.0
+theme = ExtResource("2_7n5ke")
+text = "Level Select"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 425.0
+offset_right = 676.0
+offset_bottom = 465.0
+theme = ExtResource("2_7n5ke")
+text = "Quit"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 400.0
+theme = ExtResource("2_7n5ke")
+text = "Bready Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore" type="Label" parent="."]
+visible = false
+layout_direction = 2
+layout_mode = 0
+offset_left = 467.0
+offset_top = 250.0
+offset_right = 667.0
+offset_bottom = 276.0
+theme = ExtResource("2_7n5ke")
+text = "Highscore:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Level_select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

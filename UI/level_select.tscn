@@ -1,0 +1,217 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvnvp11srh5l5"]
+
+[ext_resource type="Script" path="res://UI/level_select.gd" id="1_cpnra"]
+[ext_resource type="Theme" uid="uid://cwrmwfimr5jfg" path="res://UI/themes/counter_theme.tres" id="2_34606"]
+[ext_resource type="Theme" uid="uid://1w2ke1lxg8lc" path="res://UI/themes/pantry_theme.tres" id="3_k7rbc"]
+[ext_resource type="Theme" uid="uid://btyrqpctqwmo" path="res://UI/themes/hot_theme.tres" id="4_m4hpu"]
+[ext_resource type="Theme" uid="uid://dydx81pqg371k" path="res://UI/themes/cold_theme.tres" id="5_8ojm2"]
+
+[node name="level_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cpnra")
+
+[node name="Level_Select" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 200.0
+text = "Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+offset_left = 476.0
+offset_top = 550.0
+offset_right = 676.0
+offset_bottom = 600.0
+text = "Play"
+
+[node name="Counter" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 476.0
+offset_top = 150.0
+offset_right = -476.0
+offset_bottom = -448.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Counter
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="counterlevels" type="Node2D" parent="." groups=["lvsets"]]
+
+[node name="level1" type="Button" parent="counterlevels"]
+offset_left = 406.0
+offset_top = 250.0
+offset_right = 506.0
+offset_bottom = 350.0
+theme = ExtResource("2_34606")
+text = "1"
+
+[node name="level2" type="Button" parent="counterlevels"]
+offset_left = 526.0
+offset_top = 250.0
+offset_right = 626.0
+offset_bottom = 350.0
+theme = ExtResource("2_34606")
+text = "2"
+
+[node name="level3" type="Button" parent="counterlevels"]
+offset_left = 646.0
+offset_top = 250.0
+offset_right = 746.0
+offset_bottom = 350.0
+theme = ExtResource("2_34606")
+disabled = true
+text = "3"
+
+[node name="pantrylevels" type="Node2D" parent="." groups=["lvsets"]]
+visible = false
+
+[node name="level1" type="Button" parent="pantrylevels"]
+offset_left = 406.0
+offset_top = 250.0
+offset_right = 506.0
+offset_bottom = 350.0
+theme = ExtResource("3_k7rbc")
+text = "1"
+
+[node name="level2" type="Button" parent="pantrylevels"]
+offset_left = 526.0
+offset_top = 250.0
+offset_right = 626.0
+offset_bottom = 350.0
+theme = ExtResource("3_k7rbc")
+text = "2"
+
+[node name="level3" type="Button" parent="pantrylevels"]
+offset_left = 646.0
+offset_top = 250.0
+offset_right = 746.0
+offset_bottom = 350.0
+theme = ExtResource("3_k7rbc")
+disabled = true
+text = "3"
+
+[node name="ovenlevels" type="Node2D" parent="." groups=["lvsets"]]
+visible = false
+
+[node name="level1" type="Button" parent="ovenlevels"]
+offset_left = 406.0
+offset_top = 250.0
+offset_right = 506.0
+offset_bottom = 350.0
+theme = ExtResource("4_m4hpu")
+text = "1"
+
+[node name="level2" type="Button" parent="ovenlevels"]
+offset_left = 526.0
+offset_top = 250.0
+offset_right = 626.0
+offset_bottom = 350.0
+theme = ExtResource("4_m4hpu")
+text = "2"
+
+[node name="level3" type="Button" parent="ovenlevels"]
+offset_left = 646.0
+offset_top = 250.0
+offset_right = 746.0
+offset_bottom = 350.0
+theme = ExtResource("4_m4hpu")
+disabled = true
+text = "3"
+
+[node name="fridgelevels" type="Node2D" parent="." groups=["lvsets"]]
+visible = false
+
+[node name="level1" type="Button" parent="fridgelevels"]
+offset_left = 406.0
+offset_top = 250.0
+offset_right = 506.0
+offset_bottom = 350.0
+theme = ExtResource("5_8ojm2")
+text = "1"
+
+[node name="level2" type="Button" parent="fridgelevels"]
+offset_left = 526.0
+offset_top = 250.0
+offset_right = 626.0
+offset_bottom = 350.0
+theme = ExtResource("5_8ojm2")
+text = "2"
+
+[node name="level3" type="Button" parent="fridgelevels"]
+offset_left = 646.0
+offset_top = 250.0
+offset_right = 746.0
+offset_bottom = 350.0
+theme = ExtResource("5_8ojm2")
+disabled = true
+text = "3"
+
+[node name="sinklevels" type="Node2D" parent="." groups=["lvsets"]]
+visible = false
+
+[node name="level1" type="Button" parent="sinklevels"]
+offset_left = 406.0
+offset_top = 250.0
+offset_right = 506.0
+offset_bottom = 350.0
+theme = ExtResource("5_8ojm2")
+text = "1"
+
+[node name="level2" type="Button" parent="sinklevels"]
+offset_left = 526.0
+offset_top = 250.0
+offset_right = 626.0
+offset_bottom = 350.0
+theme = ExtResource("5_8ojm2")
+text = "2"
+
+[node name="level3" type="Button" parent="sinklevels"]
+offset_left = 646.0
+offset_top = 250.0
+offset_right = 746.0
+offset_bottom = 350.0
+theme = ExtResource("5_8ojm2")
+disabled = true
+text = "3"
+
+[node name="Highscore" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 300.0
+offset_bottom = 250.0
+item_count = 5
+allow_reselect = true
+popup/item_0/text = "Counter"
+popup/item_0/id = 0
+popup/item_1/text = "Pantry"
+popup/item_1/id = 1
+popup/item_2/text = "Oven"
+popup/item_2/id = 2
+popup/item_3/text = "Fridge"
+popup/item_3/id = 3
+popup/item_4/text = "Sink"
+popup/item_4/id = 4
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="counterlevels/level1" to="." method="_on_counter_level_1_pressed"]
+[connection signal="pressed" from="counterlevels/level2" to="." method="_on_counter_level_2_pressed"]
+[connection signal="pressed" from="counterlevels/level3" to="." method="_on_counter_level_3_pressed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
