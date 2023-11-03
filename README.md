@@ -20,12 +20,15 @@ https://www.dafont.com/pixelmania.font
 sixtwentystudio@gmail.com
 https://www.dafont.com/breads.font
 
+the [coin sprite](https://kenney.nl/assets/puzzle-pack-2](https://kenney.nl/assets/puzzle-pack-2) are provided by Kenney.nl.
+
 ## Future Development
- - levels
- - coins
- - score
- - custom art
+ - more levels
+ - more custom art
  - music
+ - save and load
+ - moving platforms
+ - endless runner?
 
 
 ## Created by
