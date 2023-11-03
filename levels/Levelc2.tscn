@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=3 uid="uid://cilam4746jo8h"]
+
+[ext_resource type="Texture2D" uid="uid://d3e4jmm7ewihh" path="res://Assets/counter.png" id="1_umcmc"]
+[ext_resource type="Script" path="res://Player/Player_Container.gd" id="2_rqm43"]
+[ext_resource type="PackedScene" uid="uid://b46qffeqp6o56" path="res://Player/Player.tscn" id="3_q466d"]
+[ext_resource type="TileSet" uid="uid://cldb111ilunqm" path="res://levels/kitchen_tileset.tres" id="4_ltwc5"]
+[ext_resource type="Texture2D" uid="uid://dcw72f44ui4gj" path="res://Assets/coin.png" id="5_di3vi"]
+[ext_resource type="PackedScene" uid="uid://bnn1778ivm1t5" path="res://levels/Camera.tscn" id="5_x7huy"]
+[ext_resource type="Script" path="res://levels/Coin.gd" id="6_6nrq3"]
+[ext_resource type="PackedScene" uid="uid://byv3rfijce50c" path="res://UI/Pause_menu.tscn" id="6_qm2wd"]
+[ext_resource type="Script" path="res://levels/Exit.gd" id="7_yj8do"]
+[ext_resource type="Texture2D" uid="uid://bre62aqb4m4n4" path="res://Assets/ball.png" id="8_t5gsh"]
+[ext_resource type="PackedScene" uid="uid://bk4a8v6mhwwm2" path="res://UI/HUD.tscn" id="9_6cexv"]
+[ext_resource type="PackedScene" uid="uid://bgpg0dcyp8xfs" path="res://Enemies/JellySlime.tscn" id="9_tkd37"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3co0l"]
+texture = ExtResource("5_di3vi")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-68.75, -68.75, 68.75, -68.75, 68.75, 68.75, -68.75, 68.75)
+
+[sub_resource type="TileSet" id="TileSet_g8e2t"]
+tile_size = Vector2i(50, 50)
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 8
+sources/1 = SubResource("TileSetAtlasSource_3co0l")
+
+[node name="Game" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_begin = Vector2(0, -900)
+scroll_limit_end = Vector2(5000, 900)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.639216, 0.627451, 0.627451, 1)
+offset_top = -648.0
+offset_right = 1152.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_umcmc")
+
+[node name="Player_Container" type="Node2D" parent="."]
+script = ExtResource("2_rqm43")
+
+[node name="Player" parent="Player_Container" instance=ExtResource("3_q466d")]
+
+[node name="Platform" type="TileMap" parent="."]
+tile_set = ExtResource("4_ltwc5")
+cell_quadrant_size = 50
+format = 2
+layer_0/tile_data = PackedInt32Array(524296, 0, 3, 524297, 65536, 3, 524298, 0, 3, 524299, 65536, 3, 458760, 65536, 2, 458761, 65536, 2, 458762, 65536, 2, 458763, 65536, 2, 458759, 0, 2, 458764, 131072, 2, 196608, 0, 3, 196609, 65536, 3, 196610, 0, 3, 196611, 65536, 3, 196612, 0, 3, 196613, 65536, 3, 131072, 65536, 2, 131073, 65536, 2, 131074, 65536, 2, 131075, 65536, 2, 131076, 65536, 2, 131077, 65536, 2, 131078, 131072, 2, 327693, 196608, 3, 327694, 196608, 3, 327695, 131072, 3, 327696, 131072, 3, 327697, 0, 3, 327698, 65536, 3, 327699, 0, 3, 327700, 65536, 3, 262157, 196608, 2, 262158, 196608, 2, 262159, 65536, 2, 262160, 65536, 2, 262161, 65536, 2, 262162, 65536, 2, 262163, 65536, 2, 262164, 65536, 2, 262165, 131072, 2, 131094, 65536, 2, 131095, 65536, 2, 131096, 65536, 2, 131093, 0, 2, 131097, 131072, 2, 25, 0, 2, 26, 65536, 2, 27, 65536, 2, 28, 131072, 2, -131040, 131072, 2, -262108, 131072, 2, -131042, 65536, 2, -131041, 65536, 2, -262110, 65536, 2, -262109, 65536, 2, -131043, 0, 2, -262111, 65536, 2, -262112, 0, 2, 8, 262144, 3, 11, 262144, 3, -65526, 65536, 2, 10, 65536, 3, 9, 0, 3, -65527, 65536, 2, -65528, 262144, 2, -65525, 262144, 2, -131060, 0, 2, -131059, 65536, 2, -131058, 131072, 2, -327665, 0, 2, -327664, 65536, 2, -327663, 131072, 2, -524270, 0, 2, -524269, 65536, 2, -524268, 131072, 2, -458731, 0, 2, -458730, 65536, 2, -458729, 131072, 2, -393192, 0, 2, -393191, 65536, 2, -393190, 65536, 2, -393189, 65536, 2, -393188, 65536, 2, -393187, 65536, 2, -393186, 131072, 2, -131033, 65536, 2, -65497, 131072, 3, -131032, 196608, 2, -65496, 196608, 3, -131031, 262144, 2, -65495, 262144, 3, -131034, 0, 2, -65494, 131072, 3, -65493, 131072, 3, -131030, 65536, 2, -131029, 65536, 2, -131028, 65536, 2, -131027, 131072, 2, -131069, 65536, 2, -131068, 65536, 2, -131067, 65536, 2, -131070, 0, 2, -131066, 131072, 2, 32, 65536, 2, 33, 65536, 2, 34, 65536, 2, 35, 65536, 2, 31, 0, 2, 262177, 131072, 3, 262178, 131072, 3, 65568, 0, 3, 131104, 0, 3, 196640, 0, 3, 262176, 0, 3, 262179, 262144, 3, 36, 65536, 2, 37, 65536, 2, 458780, 65536, 2, 458781, 65536, 2, 458782, 65536, 2, 458783, 65536, 2, 458779, 0, 2, 458784, 131072, 2, 589858, 65536, 2, 589859, 65536, 2, 589860, 65536, 2, 589857, 0, 2, 589861, 131072, 2, 262180, 0, 3, 262181, 65536, 3, 327718, 0, 3, 327721, 65536, 3, 327722, 0, 3, 327723, 65536, 3, 262183, 196608, 2, 327719, 196608, 3, 262184, 262144, 2, 327720, 262144, 3, 262182, 65536, 2, 262185, 65536, 2, 262186, 65536, 2, 262187, 65536, 2, 262188, 131072, 2, 589863, 0, 3, 589864, 65536, 3, 589865, 131072, 3, 131118, 131072, 3, 131119, 196608, 3, 131120, 262144, 3, 524331, 0, 2, 524332, 65536, 2, 524333, 131072, 2, 458798, 0, 2, 458799, 65536, 2, 458800, 131072, 2, 327728, 0, 2, 327729, 65536, 2, 327730, 131072, 2, 196658, 0, 2, 196659, 65536, 2, 196660, 131072, 2, 65551, 0, 2, 65552, 65536, 2, 65553, 131072, 2)
+
+[node name="Coin" type="TileMap" parent="."]
+scale = Vector2(0.3, 0.3)
+tile_set = SubResource("TileSet_g8e2t")
+cell_quadrant_size = 128
+format = 2
+layer_0/tile_data = PackedInt32Array(458770, 0, 0, 458763, 0, 0, -196579, 0, 0, -196575, 0, 0, -196571, 0, 0, 852019, 0, 0, 852023, 0, 0, 852027, 0, 0, -196530, 0, 0, -1114057, 0, 0, 108, 0, 0, 112, 0, 0, 117, 0, 0, 122, 0, 0, -458619, 0, 0, 589995, 0, 0, -1376165, 0, 0)
+script = ExtResource("6_6nrq3")
+
+[node name="ForeGround" type="TileMap" parent="."]
+format = 2
+
+[node name="Camera" parent="." instance=ExtResource("5_x7huy")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("9_6cexv")]
+
+[node name="Pause_menu" parent="UI" instance=ExtResource("6_qm2wd")]
+process_mode = 3
+visible = false
+
+[node name="change_later" type="Area2D" parent="."]
+script = ExtResource("7_yj8do")
+
+[node name="Sprite2D" type="Sprite2D" parent="change_later"]
+position = Vector2(1689, 148)
+scale = Vector2(1.5, 2)
+texture = ExtResource("8_t5gsh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="change_later"]
+position = Vector2(1689, 148)
+scale = Vector2(1.5, 2)
+polygon = PackedVector2Array(10, -23.8, 10, -22.1, 21, -15.1, 21, -12.6, 25, -6.6, 25, 8, 23.1, 8, 15.1, 21, 12.5, 21, 5.5, 25, -5.6, 25, -21, 14, -21, 11.7, -24, 7.7, -24, -9, -22.1, -9, -14.1, -21, -11.3, -21, -6, -23.3, -6, -25, -3.7, -25)
+
+[node name="Enemy_Container" type="Node2D" parent="."]
+
+[node name="JellySlime" parent="Enemy_Container" instance=ExtResource("9_tkd37")]
+position = Vector2(470, 313)
+
+[connection signal="body_entered" from="change_later" to="change_later" method="_on_body_entered"]

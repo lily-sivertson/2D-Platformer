@@ -1,0 +1,139 @@
+[gd_scene load_steps=20 format=3 uid="uid://b46qffeqp6o56"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_2bm1v"]
+[ext_resource type="Texture2D" uid="uid://rdihxl1eig4r" path="res://Assets/bread-20231031-153903.png" id="1_7g5wg"]
+[ext_resource type="Script" path="res://Player/StateMachine.gd" id="2_hoory"]
+[ext_resource type="Script" path="res://Player/Idle.gd" id="3_o4hrg"]
+[ext_resource type="Script" path="res://Player/Moving.gd" id="4_rq380"]
+[ext_resource type="Script" path="res://Player/Jumping.gd" id="5_1w8he"]
+[ext_resource type="Script" path="res://Player/Falling.gd" id="6_ttew2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyqhn"]
+atlas = ExtResource("1_7g5wg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5lkv"]
+atlas = ExtResource("1_7g5wg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6k6f"]
+atlas = ExtResource("1_7g5wg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aubki"]
+atlas = ExtResource("1_7g5wg")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n7m5"]
+atlas = ExtResource("1_7g5wg")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xehes"]
+atlas = ExtResource("1_7g5wg")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76y8w"]
+atlas = ExtResource("1_7g5wg")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdpa5"]
+atlas = ExtResource("1_7g5wg")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k81gx"]
+atlas = ExtResource("1_7g5wg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5p5gw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyqhn")
+}],
+"loop": true,
+"name": &"Falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5lkv")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6k6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aubki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n7m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xehes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76y8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdpa5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k81gx")
+}],
+"loop": true,
+"name": &"Moving",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_io3d6"]
+size = Vector2(26.5, 40.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5mdg"]
+size = Vector2(54, 63)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_2bm1v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_5p5gw")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.25, -0.125)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_io3d6")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_hoory")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_o4hrg")
+
+[node name="Moving" type="Node" parent="StateMachine"]
+script = ExtResource("4_rq380")
+
+[node name="Jumping" type="Node" parent="StateMachine"]
+script = ExtResource("5_1w8he")
+
+[node name="Falling" type="Node" parent="StateMachine"]
+script = ExtResource("6_ttew2")
+
+[node name="Coin_Collector" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin_Collector"]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_d5mdg")
+
+[connection signal="body_entered" from="Coin_Collector" to="." method="_on_coin_collector_body_entered"]

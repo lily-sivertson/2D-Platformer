@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://daxb4avkh8x6b"]
+
+[ext_resource type="Script" path="res://levels/end_game.gd" id="1_leans"]
+[ext_resource type="Theme" uid="uid://bmhpd1nx43yx2" path="res://UI/themes/Main_theme.tres" id="2_uo5gv"]
+[ext_resource type="FontFile" uid="uid://c847nhc7bf62w" path="res://Assets/Pixelmania.ttf" id="3_qyjyk"]
+
+[node name="end_game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_leans")
+
+[node name="Ty" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uo5gv")
+text = "Thanks for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -209.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_qyjyk")
+theme_override_font_sizes/font_size = 40
+text = "YOU  ESCAPED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="main_menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 400.0
+offset_right = 676.0
+offset_bottom = 440.0
+theme = ExtResource("2_uo5gv")
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 460.0
+offset_right = 676.0
+offset_bottom = 500.0
+theme = ExtResource("2_uo5gv")
+text = "Quit
+"
+
+[connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

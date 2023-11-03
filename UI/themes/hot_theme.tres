@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://btyrqpctqwmo"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://btyrqpctqwmo"]
+
+[ext_resource type="FontFile" uid="uid://bijp3ghbmgrhu" path="res://Assets/Breads.ttf" id="1_inaws"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpgpl"]
 bg_color = Color(0.505882, 0.505882, 0.505882, 1)
@@ -12,25 +14,25 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gp2ns"]
-bg_color = Color(0.839216, 0.47451, 0.545098, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57dab"]
+bg_color = Color(0.768627, 0.368627, 0.247059, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.803922, 0.258824, 0.411765, 1)
+border_color = Color(0.94902, 0.65098, 0.454902, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgcfs"]
-bg_color = Color(0.839216, 0.47451, 0.545098, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpqw6"]
+bg_color = Color(0.768627, 0.368627, 0.247059, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.803922, 0.258824, 0.411765, 1)
+border_color = Color(0.788235, 0.188235, 0.0784314, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -48,21 +50,23 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dqps"]
-bg_color = Color(0.839216, 0.47451, 0.545098, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvo05"]
+bg_color = Color(0.768627, 0.368627, 0.247059, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.803922, 0.258824, 0.411765, 1)
+border_color = Color(0.788235, 0.188235, 0.0784314, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [resource]
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("1_inaws")
 Button/styles/disabled = SubResource("StyleBoxFlat_xpgpl")
-Button/styles/focus = SubResource("StyleBoxFlat_gp2ns")
-Button/styles/hover = SubResource("StyleBoxFlat_wgcfs")
+Button/styles/focus = SubResource("StyleBoxFlat_57dab")
+Button/styles/hover = SubResource("StyleBoxFlat_jpqw6")
 Button/styles/normal = SubResource("StyleBoxFlat_nvcwq")
-Button/styles/pressed = SubResource("StyleBoxFlat_4dqps")
+Button/styles/pressed = SubResource("StyleBoxFlat_qvo05")

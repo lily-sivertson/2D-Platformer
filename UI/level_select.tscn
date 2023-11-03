@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvnvp11srh5l5"]
+[gd_scene load_steps=10 format=3 uid="uid://bvnvp11srh5l5"]
 
 [ext_resource type="Script" path="res://UI/level_select.gd" id="1_cpnra"]
-[ext_resource type="Theme" uid="uid://cwrmwfimr5jfg" path="res://UI/themes/counter_theme.tres" id="2_34606"]
-[ext_resource type="Theme" uid="uid://1w2ke1lxg8lc" path="res://UI/themes/pantry_theme.tres" id="3_k7rbc"]
+[ext_resource type="Theme" uid="uid://1w2ke1lxg8lc" path="res://UI/themes/counter_theme.tres" id="2_34606"]
+[ext_resource type="Theme" uid="uid://bmhpd1nx43yx2" path="res://UI/themes/Main_theme.tres" id="2_nj3mw"]
+[ext_resource type="Texture2D" uid="uid://d3e4jmm7ewihh" path="res://Assets/counter.png" id="2_pmfuh"]
+[ext_resource type="Texture2D" uid="uid://c4h6iiey2ilyu" path="res://Assets/sink.png" id="3_h4e5w"]
 [ext_resource type="Theme" uid="uid://btyrqpctqwmo" path="res://UI/themes/hot_theme.tres" id="4_m4hpu"]
+[ext_resource type="FontFile" uid="uid://bijp3ghbmgrhu" path="res://Assets/Breads.ttf" id="4_xc4ed"]
 [ext_resource type="Theme" uid="uid://dydx81pqg371k" path="res://UI/themes/cold_theme.tres" id="5_8ojm2"]
+[ext_resource type="Theme" uid="uid://cwrmwfimr5jfg" path="res://UI/themes/sink_theme.tres" id="6_tpp4d"]
 
 [node name="level_select" type="Control"]
 layout_mode = 3
@@ -15,19 +19,71 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cpnra")
 
+[node name="Counterbg" type="TextureRect" parent="." groups=["lvbgs"]]
+modulate = Color(0.768627, 0.768627, 0.729412, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pmfuh")
+
+[node name="Ovenbg" type="TextureRect" parent="." groups=["lvbgs"]]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_h4e5w")
+
+[node name="Fridgebg" type="TextureRect" parent="." groups=["lvbgs"]]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_h4e5w")
+
+[node name="Sinkbg" type="TextureRect" parent="." groups=["lvbgs"]]
+visible = false
+modulate = Color(0.721569, 0.717647, 0.690196, 1)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_h4e5w")
+
+[node name="Control" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -281.0
+offset_right = 200.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.454902)
+
 [node name="Level_Select" type="Label" parent="."]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 200.0
+theme = ExtResource("2_nj3mw")
+theme_override_font_sizes/font_size = 50
 text = "Level Select"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Play" type="Button" parent="."]
+layout_mode = 0
 offset_left = 476.0
 offset_top = 550.0
 offset_right = 676.0
 offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("4_xc4ed")
+theme_override_font_sizes/font_size = 20
 text = "Play"
 
 [node name="Counter" type="Label" parent="."]
@@ -42,6 +98,7 @@ offset_bottom = -448.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme = ExtResource("2_nj3mw")
 text = "Counter
 "
 horizontal_alignment = 1
@@ -71,34 +128,6 @@ offset_top = 250.0
 offset_right = 746.0
 offset_bottom = 350.0
 theme = ExtResource("2_34606")
-disabled = true
-text = "3"
-
-[node name="pantrylevels" type="Node2D" parent="." groups=["lvsets"]]
-visible = false
-
-[node name="level1" type="Button" parent="pantrylevels"]
-offset_left = 406.0
-offset_top = 250.0
-offset_right = 506.0
-offset_bottom = 350.0
-theme = ExtResource("3_k7rbc")
-text = "1"
-
-[node name="level2" type="Button" parent="pantrylevels"]
-offset_left = 526.0
-offset_top = 250.0
-offset_right = 626.0
-offset_bottom = 350.0
-theme = ExtResource("3_k7rbc")
-text = "2"
-
-[node name="level3" type="Button" parent="pantrylevels"]
-offset_left = 646.0
-offset_top = 250.0
-offset_right = 746.0
-offset_bottom = 350.0
-theme = ExtResource("3_k7rbc")
 disabled = true
 text = "3"
 
@@ -166,7 +195,7 @@ offset_left = 406.0
 offset_top = 250.0
 offset_right = 506.0
 offset_bottom = 350.0
-theme = ExtResource("5_8ojm2")
+theme = ExtResource("6_tpp4d")
 text = "1"
 
 [node name="level2" type="Button" parent="sinklevels"]
@@ -174,7 +203,7 @@ offset_left = 526.0
 offset_top = 250.0
 offset_right = 626.0
 offset_bottom = 350.0
-theme = ExtResource("5_8ojm2")
+theme = ExtResource("6_tpp4d")
 text = "2"
 
 [node name="level3" type="Button" parent="sinklevels"]
@@ -182,7 +211,7 @@ offset_left = 646.0
 offset_top = 250.0
 offset_right = 746.0
 offset_bottom = 350.0
-theme = ExtResource("5_8ojm2")
+theme = ExtResource("6_tpp4d")
 disabled = true
 text = "3"
 
@@ -197,21 +226,29 @@ offset_left = 100.0
 offset_top = 200.0
 offset_right = 300.0
 offset_bottom = 250.0
-item_count = 5
+theme = ExtResource("2_nj3mw")
+item_count = 4
 allow_reselect = true
 popup/item_0/text = "Counter"
 popup/item_0/id = 0
-popup/item_1/text = "Pantry"
+popup/item_1/text = "Oven"
 popup/item_1/id = 1
-popup/item_2/text = "Oven"
+popup/item_2/text = "Fridge"
 popup/item_2/id = 2
-popup/item_3/text = "Fridge"
+popup/item_3/text = "Sink"
 popup/item_3/id = 3
-popup/item_4/text = "Sink"
-popup/item_4/id = 4
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="counterlevels/level1" to="." method="_on_counter_level_1_pressed"]
 [connection signal="pressed" from="counterlevels/level2" to="." method="_on_counter_level_2_pressed"]
 [connection signal="pressed" from="counterlevels/level3" to="." method="_on_counter_level_3_pressed"]
+[connection signal="pressed" from="ovenlevels/level1" to="." method="_on_oven_level_1_pressed"]
+[connection signal="pressed" from="ovenlevels/level2" to="." method="_on_oven_level_2_pressed"]
+[connection signal="pressed" from="ovenlevels/level3" to="." method="_on_oven_level_3_pressed"]
+[connection signal="pressed" from="fridgelevels/level1" to="." method="_on_fridge_level_1_pressed"]
+[connection signal="pressed" from="fridgelevels/level2" to="." method="_on_fridge_level_2_pressed"]
+[connection signal="pressed" from="fridgelevels/level3" to="." method="_on_fridge_level_3_pressed"]
+[connection signal="pressed" from="sinklevels/level1" to="." method="_on_sink_level_1_pressed"]
+[connection signal="pressed" from="sinklevels/level2" to="." method="_on_sink_level_2_pressed"]
+[connection signal="pressed" from="sinklevels/level3" to="." method="_on_sink_level_3_pressed"]
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

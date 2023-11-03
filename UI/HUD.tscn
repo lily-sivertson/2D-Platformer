@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk4a8v6mhwwm2"]
+
+[ext_resource type="Texture2D" uid="uid://dcw72f44ui4gj" path="res://Assets/coin.png" id="1_lhyyt"]
+[ext_resource type="Theme" uid="uid://bmhpd1nx43yx2" path="res://UI/themes/Main_theme.tres" id="2_s1ti7"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 138.0
+offset_bottom = 138.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_lhyyt")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 42.0
+theme = ExtResource("2_s1ti7")
+text = "Score: "
+vertical_alignment = 1

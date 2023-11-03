@@ -11,6 +11,14 @@ This game was made in Godot v4.1.1
 ## What Makes this a Game?
 
 ## References
+Fonts: 
+	
+"Pixelmania" by imagex
+https://www.dafont.com/pixelmania.font
+
+"Breads" by Sixtwenty Studio
+sixtwentystudio@gmail.com
+https://www.dafont.com/breads.font
 
 ## Future Development
  - levels

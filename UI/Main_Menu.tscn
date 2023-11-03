@@ -1,12 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://c82x7e80ywuhg"]
+[gd_scene load_steps=5 format=3 uid="uid://c82x7e80ywuhg"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1_neouw"]
 [ext_resource type="Theme" uid="uid://bmhpd1nx43yx2" path="res://UI/themes/Main_theme.tres" id="2_7n5ke"]
+[ext_resource type="Texture2D" uid="uid://dc4dtrgcuysry" path="res://Assets/kitchen.png" id="2_u7hc2"]
+[ext_resource type="FontFile" uid="uid://c847nhc7bf62w" path="res://Assets/Pixelmania.ttf" id="3_m1a6g"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_neouw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.639216, 0.639216, 0.639216, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u7hc2")
 
 [node name="Play" type="Button" parent="."]
 process_mode = 3
@@ -41,7 +55,10 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 400.0
 theme = ExtResource("2_7n5ke")
-text = "Bready Player 1"
+theme_override_fonts/font = ExtResource("3_m1a6g")
+theme_override_font_sizes/font_size = 35
+text = "BREADY 
+PLAYER  1"
 horizontal_alignment = 1
 vertical_alignment = 1
 

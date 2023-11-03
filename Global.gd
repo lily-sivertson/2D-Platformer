@@ -1,36 +1,72 @@
 extends Node
 
-'''list of dictionaries of all the intended levels
-	format:
-		{ 
-			"lid"="1",
-			"name"="the counter 1",
-			"gamefile"="res://Level1.tscn",
-			"highscore"=0,
-		}
-'''
+#list of dictionaries with info for each level
 var levels=[
 	{	
-		"lid"="1",
-		"name"="the counter 1",
+		"name"="",
+		"inst"="",
 		"gamefile"="res://levels/Level1.tscn",
-		"highscore"=0,
-	},
-	{ 
-		"lid"="2",
-		"name"="the counter 2",
-		"gamefile"="res://levels/Level2.tscn",
-		"highscore"=0,
-	},
-	{ 
-		"lid"="3",
-		"name"="the counter 3",
+		"highscore"=0
+	},{ 	
+		"name"="",
+		"inst"="",
+		"gamefile"="res://levels/Levelc2.tscn",
+		"highscore"=0
+	},{ 
+		"name"="",
+		"inst"="",
 		"gamefile"="res://levels/Level3.tscn",
-		"highscore"=0,
-	}
-	
+		"highscore"=0
+	},{ 
+		"name"="",
+		"inst"="",
+		"gamefile"="res://levels/oven_level1.tscn",
+		"highscore"=0
+	},{ 
+		"name"="",
+		"inst"="",
+		"gamefile"="res://levels/oven_level2.tscn",
+		"highscore"=0
+	},{ 
+		"name"="",
+		"inst"="",
+		"gamefile"="res://levels/oven_level3.tscn",
+		"highscore"=0
+	},{ 
+		"name"="",
+		"inst"="",
+		"gamefile"="res://levels/fridge_level1.tscn",
+		"highscore"=0
+	},{ 
+		"name"="",
+		"inst"="",
+		"gamefile"="res://levels/fridge_level2.tscn",
+		"highscore"=0
+	},{ 
+		"name"="",
+		"inst"="",
+		"gamefile"="res://levels/fridge_level3.tscn",
+		"highscore"=0
+	},{ 
+		"name"="",
+		"inst"="",
+		"gamefile"="res://levels/sink_level1.tscn",
+		"highscore"=0
+	},{ 
+		"name"="",
+		"inst"="",
+		"gamefile"="res://levels/sink_level2.tscn",
+		"highscore"=0
+	},{ 
+		"name"="",
+		"inst"="",
+		"gamefile"="res://levels/sink_level3.tscn",
+		"highscore"=0
+	}	
 ]
-var zones=["Counter","Pantry","Oven","Fridge", "Sink"]
+
+
+var zones=["Counter","Oven","Fridge", "Sink"]
 var score=0
 
 var death_zone = 1000
@@ -55,6 +91,7 @@ func _input(event):
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 				get_tree().paused = true
 				Pause_Menu.show()
+				
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -74,5 +111,14 @@ func set_level(dex):
 		lvhs="Highscore:\n"+ temp.get("highscore")
 	
 func reset():
-	score =0
+	score=0
+	var Score= get_node_or_null("/root/Game/UI/HUD/Score")
+	if Score!= null:
+		Score.text="Score: "+ str(score)
 	
+	
+func update_score():
+	score+=100
+	var Score= get_node_or_null("/root/Game/UI/HUD/Score")
+	if Score!= null:
+		Score.text="Score: "+ str(score)

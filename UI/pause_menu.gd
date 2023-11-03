@@ -12,4 +12,7 @@ func _on_main_menu_pressed():
 
 func _on_restart_pressed():
 	get_tree().paused=false
-	pass # Replace with function body.
+	Global.reset()
+	var Player= get_node_or_null("/root/Game/Player_Container/Player")
+	if Player!=null:
+		Player.queue_free()
