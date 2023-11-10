@@ -8,6 +8,7 @@ func _ready():
 		for y in range(1000):
 			if get_cell_source_id(0, Vector2i(x, y)) != -1:
 				coins.append(Vector2(x,y))
+			
 
 
 func get_coin(p):

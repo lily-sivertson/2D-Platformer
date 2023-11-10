@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvtbeili3qnr7"
+path="res://.godot/imported/Battle Lava - Psi Rock.mp3-42c8912cc859035f50b87d09e6850123.mp3str"
+
+[deps]
+
+source_file="res://Assets/Battle Lava - Psi Rock.mp3"
+dest_files=["res://.godot/imported/Battle Lava - Psi Rock.mp3-42c8912cc859035f50b87d09e6850123.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

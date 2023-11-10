@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1faqpe7ylnvc"
+path="res://.godot/imported/Eggy Toast - Catastrophic Success.mp3-b08abcab969a4ff4ac970312df6ded93.mp3str"
+
+[deps]
+
+source_file="res://Assets/Eggy Toast - Catastrophic Success.mp3"
+dest_files=["res://.godot/imported/Eggy Toast - Catastrophic Success.mp3-b08abcab969a4ff4ac970312df6ded93.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

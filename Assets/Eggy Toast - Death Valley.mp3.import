@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blg0fyg6w3757"
+path="res://.godot/imported/Eggy Toast - Death Valley.mp3-6a06593d0fb37717906fe46867a7271d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Eggy Toast - Death Valley.mp3"
+dest_files=["res://.godot/imported/Eggy Toast - Death Valley.mp3-6a06593d0fb37717906fe46867a7271d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

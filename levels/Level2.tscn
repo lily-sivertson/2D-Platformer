@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://p3oardbwvgu2"]
+[gd_scene load_steps=8 format=3 uid="uid://bkexnfuvlgrkc"]
 
 [ext_resource type="Texture2D" uid="uid://bptfi4o70qjh6" path="res://Assets/kitchen2.png" id="1_jv66g"]
 [ext_resource type="Texture2D" uid="uid://d3e4jmm7ewihh" path="res://Assets/counter.png" id="1_m0phv"]
 [ext_resource type="PackedScene" uid="uid://b46qffeqp6o56" path="res://Player/Player.tscn" id="3_6nxuy"]
-[ext_resource type="TileSet" uid="uid://cldb111ilunqm" path="res://levels/kitchen_tileset.tres" id="4_gauq8"]
 [ext_resource type="PackedScene" uid="uid://bnn1778ivm1t5" path="res://levels/Camera.tscn" id="5_4dob5"]
 [ext_resource type="PackedScene" uid="uid://byv3rfijce50c" path="res://UI/Pause_menu.tscn" id="6_q0sxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lc2cr"]
 size = Vector2(1152, 50)
+
+[sub_resource type="TileSet" id="TileSet_3uveq"]
+tile_size = Vector2i(50, 50)
+physics_layer_0/collision_layer = 1
 
 [node name="Game" type="Node2D"]
 
@@ -46,7 +49,7 @@ shape = SubResource("RectangleShape2D_lc2cr")
 
 [node name="platform" type="TileMap" parent="."]
 scale = Vector2(1.5, 1.5)
-tile_set = ExtResource("4_gauq8")
+tile_set = SubResource("TileSet_3uveq")
 format = 2
 layer_0/tile_data = PackedInt32Array(393217, 65536, 2, 393218, 65536, 2, 393216, 65536, 2, 393219, 65536, 2, 458751, 0, 2, 393220, 131072, 2, 131080, 262144, 3, 131081, 262144, 3, 131082, 131072, 3, 131083, 131072, 3, 65546, 65536, 2, 65547, 65536, 2, 65544, 196608, 2, 65545, 196608, 2, 65548, 131072, 2, 327693, 196608, 3, 327691, 0, 3, 327692, 65536, 3, 262155, 65536, 2, 262156, 65536, 2, 262157, 196608, 2, 262154, 0, 2, 458760, 0, 2, 458761, 65536, 2, 458762, 65536, 2, 458763, 65536, 2, 458764, 65536, 2, 458765, 65536, 2, 458766, 131072, 2, 327684, 0, 2, 327685, 65536, 2, 327686, 131072, 2, 196610, 0, 2, 196611, 65536, 2, 196612, 131072, 2, 65540, 0, 2, 65541, 65536, 2, 65542, 131072, 2)
 

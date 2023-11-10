@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -50.0
-const MAX_JUMP = -600.0
+const MAX_JUMP = -500.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -29,10 +29,15 @@ func set_animation(anim):
 	if $AnimatedSprite2D.sprite_frames.has_animation(anim): $AnimatedSprite2D.play(anim)
 	else: $AnimatedSprite2D.play()
 	
+
+
+
+
+
+
 func _on_coin_collector_body_entered(body):
-	if body.name == "Coin":
-		body.get_coin(global_position)
+	if body.get_parent().name== "Piggy_Bank":
+		body.hide()
+		body.get_child(1).set_deferred("disabled",true)
 		Global.update_score()
-
-
-
+		$AudioStreamPlayer.play()

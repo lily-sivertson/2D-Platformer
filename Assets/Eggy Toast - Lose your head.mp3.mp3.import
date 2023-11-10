@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4j8r57r25etu"
+path="res://.godot/imported/Eggy Toast - Lose your head.mp3.mp3-78da76a7f5083729999f031a6b05aa36.mp3str"
+
+[deps]
+
+source_file="res://Assets/Eggy Toast - Lose your head.mp3.mp3"
+dest_files=["res://.godot/imported/Eggy Toast - Lose your head.mp3.mp3-78da76a7f5083729999f031a6b05aa36.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

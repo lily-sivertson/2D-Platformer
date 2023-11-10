@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c82x7e80ywuhg"]
+[gd_scene load_steps=6 format=3 uid="uid://c82x7e80ywuhg"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1_neouw"]
 [ext_resource type="Theme" uid="uid://bmhpd1nx43yx2" path="res://UI/themes/Main_theme.tres" id="2_7n5ke"]
 [ext_resource type="Texture2D" uid="uid://dc4dtrgcuysry" path="res://Assets/kitchen.png" id="2_u7hc2"]
 [ext_resource type="FontFile" uid="uid://c847nhc7bf62w" path="res://Assets/Pixelmania.ttf" id="3_m1a6g"]
+[ext_resource type="AudioStream" uid="uid://d4lm73qxmqt5p" path="res://Assets/The Polish Ambassador - Banana Bread Break.mp3" id="5_kvax8"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -74,6 +75,10 @@ theme = ExtResource("2_7n5ke")
 text = "Highscore:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kvax8")
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Level_select" to="." method="_on_level_select_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b46qffeqp6o56"]
+[gd_scene load_steps=21 format=3 uid="uid://b46qffeqp6o56"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_2bm1v"]
 [ext_resource type="Texture2D" uid="uid://rdihxl1eig4r" path="res://Assets/bread-20231031-153903.png" id="1_7g5wg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Player/Moving.gd" id="4_rq380"]
 [ext_resource type="Script" path="res://Player/Jumping.gd" id="5_1w8he"]
 [ext_resource type="Script" path="res://Player/Falling.gd" id="6_ttew2"]
+[ext_resource type="AudioStream" uid="uid://bwgj36xhmbunt" path="res://Assets/coin_collect.wav" id="8_pw6lw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vyqhn"]
 atlas = ExtResource("1_7g5wg")
@@ -135,5 +136,8 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin_Collector"]
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_d5mdg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_pw6lw")
 
 [connection signal="body_entered" from="Coin_Collector" to="." method="_on_coin_collector_body_entered"]
