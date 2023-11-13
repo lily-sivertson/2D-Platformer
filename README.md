@@ -9,7 +9,7 @@ This game was made in Godot v4.1.1
 
 
 ## What Makes this a Game?
-
+The player has control over the character, and is able to jump and move around to collect coins and escape a kitchen themed 2D platformer game. They are rewarded for collecting coins during their escape, which increase their score. 
 ## References
 Fonts: 
 	
@@ -50,9 +50,10 @@ sounds:
 
 coin sound by bradwesson, https://freesound.org/people/bradwesson/sounds/135936/
 
-burn sound , https://freesound.org/people/stevenmaertens/sounds/676469/
-impale sound, https://freesound.org/people/InspectorJ/sounds/413497/
-portal sound, https://freesound.org/people/Stereo%20Surgeon/sounds/265675/
+ - burn sound , https://freesound.org/people/stevenmaertens/sounds/676469/
+ - impale sound, https://freesound.org/people/InspectorJ/sounds/413497/
+ - portal sound, https://freesound.org/people/Stereo%20Surgeon/sounds/265675/
+
 	
 ## Future Development
 
