@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgpg0dcyp8xfs"]
+[gd_scene load_steps=20 format=3 uid="uid://bgpg0dcyp8xfs"]
 
 [ext_resource type="Texture2D" uid="uid://culk6e1ij3mhr" path="res://Assets/jelly slime jumpy.png" id="1_6d31r"]
 [ext_resource type="Script" path="res://Enemies/JellySlime.gd" id="1_bjrbm"]
+[ext_resource type="AudioStream" uid="uid://c5rlrcl258b6w" path="res://Assets/460871__moshang__splat07.wav" id="3_2mv3d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pe6dy"]
 atlas = ExtResource("1_6d31r")
@@ -94,7 +95,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi5t1"]
-size = Vector2(48, 55.5)
+size = Vector2(48, 40.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_566r1"]
+size = Vector2(48, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gntyt"]
+radius = 500.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_byqms"]
+radius = 33.2415
 
 [node name="JellySlime" type="CharacterBody2D"]
 script = ExtResource("1_bjrbm")
@@ -106,13 +116,39 @@ animation = &"Jumping"
 autoplay = "Falling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 9.375)
 shape = SubResource("RectangleShape2D_oi5t1")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 
 [node name="See" type="RayCast2D" parent="."]
+target_position = Vector2(350, 0)
+
+[node name="Above_and_Below" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Above_and_Below"]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_566r1")
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="sight" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gntyt")
+
+[node name="Attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+shape = SubResource("CircleShape2D_byqms")
+
+[node name="splat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2mv3d")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]

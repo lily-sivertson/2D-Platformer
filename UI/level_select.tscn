@@ -32,6 +32,7 @@ texture = ExtResource("2_pmfuh")
 
 [node name="Ovenbg" type="TextureRect" parent="." groups=["lvbgs"]]
 visible = false
+modulate = Color(0.94902, 0.94902, 0.94902, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -157,7 +158,6 @@ offset_top = 250.0
 offset_right = 746.0
 offset_bottom = 350.0
 theme = ExtResource("4_m4hpu")
-disabled = true
 text = "3"
 
 [node name="fridgelevels" type="Node2D" parent="." groups=["lvsets"]]
@@ -213,7 +213,6 @@ offset_top = 250.0
 offset_right = 746.0
 offset_bottom = 350.0
 theme = ExtResource("6_tpp4d")
-disabled = true
 text = "3"
 
 [node name="Highscore" type="Label" parent="."]
@@ -228,16 +227,14 @@ offset_top = 200.0
 offset_right = 300.0
 offset_bottom = 250.0
 theme = ExtResource("2_nj3mw")
-item_count = 4
+item_count = 3
 allow_reselect = true
 popup/item_0/text = "Counter"
 popup/item_0/id = 0
 popup/item_1/text = "Oven"
 popup/item_1/id = 1
-popup/item_2/text = "Fridge"
+popup/item_2/text = "Sink"
 popup/item_2/id = 2
-popup/item_3/text = "Sink"
-popup/item_3/id = 3
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="counterlevels/level1" to="." method="_on_counter_level_1_pressed"]

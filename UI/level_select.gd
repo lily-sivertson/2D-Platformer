@@ -19,9 +19,9 @@ func _on_option_button_item_selected(index):
 	elif index==1:
 		$Ovenbg.show()
 		$ovenlevels.show()
-	elif index==2:
-		$Fridgebg.show()
-		$fridgelevels.show()
+	#elif index==2:
+		#$Fridgebg.show()
+		#$fridgelevels.show()
 	else:
 		$Sinkbg.show()
 		$sinklevels.show()
@@ -63,21 +63,21 @@ func _on_oven_level_3_pressed():
 
 
 
-func _on_fridge_level_1_pressed():
+'''func _on_fridge_level_1_pressed():
 	Global.set_level(6)
 
 func _on_fridge_level_2_pressed():
 	Global.set_level(7)
 
 func _on_fridge_level_3_pressed():
-	Global.set_level(8)
+	Global.set_level(8)'''
 	
 	
 # sink levels
 
 func _on_sink_level_1_pressed():
-	Global.set_level(9)
+	Global.set_level(6)
 func _on_sink_level_2_pressed():
-	Global.set_level(10)
+	Global.set_level(7)
 func _on_sink_level_3_pressed():
-	Global.set_level(11)
+	Global.set_level(8)

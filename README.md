@@ -49,6 +49,10 @@ license: CC BY-NC-SA
 sounds: 
 
 coin sound by bradwesson, https://freesound.org/people/bradwesson/sounds/135936/
+
+burn sound , https://freesound.org/people/stevenmaertens/sounds/676469/
+impale sound, https://freesound.org/people/InspectorJ/sounds/413497/
+portal sound, https://freesound.org/people/Stereo%20Surgeon/sounds/265675/
 	
 ## Future Development
 

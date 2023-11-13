@@ -29,3 +29,38 @@ offset_bottom = 42.0
 theme = ExtResource("2_s1ti7")
 text = "Score: "
 vertical_alignment = 1
+
+[node name="Health" type="Label" parent="."]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 8.0
+offset_right = 1130.0
+offset_bottom = 40.0
+theme = ExtResource("2_s1ti7")
+text = "Health: "
+vertical_alignment = 1
+
+[node name="overlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.447059)
+
+[node name="text" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_s1ti7")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b46qffeqp6o56"]
+[gd_scene load_steps=23 format=3 uid="uid://b46qffeqp6o56"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_2bm1v"]
 [ext_resource type="Texture2D" uid="uid://rdihxl1eig4r" path="res://Assets/bread-20231031-153903.png" id="1_7g5wg"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Player/Jumping.gd" id="5_1w8he"]
 [ext_resource type="Script" path="res://Player/Falling.gd" id="6_ttew2"]
 [ext_resource type="AudioStream" uid="uid://bwgj36xhmbunt" path="res://Assets/coin_collect.wav" id="8_pw6lw"]
+[ext_resource type="AudioStream" uid="uid://dik14ccj5lmri" path="res://Assets/676469__stevenmaertens__lighter-long.wav" id="9_hkc10"]
+[ext_resource type="AudioStream" uid="uid://4d4mpp56bmn0" path="res://Assets/413497__inspectorj__stab-metal-knife-in-lettuce-e.wav" id="10_egyr1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vyqhn"]
 atlas = ExtResource("1_7g5wg")
@@ -140,4 +142,16 @@ shape = SubResource("RectangleShape2D_d5mdg")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_pw6lw")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="burn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_hkc10")
+volume_db = 0.321
+
+[node name="impale" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_egyr1")
+
 [connection signal="body_entered" from="Coin_Collector" to="." method="_on_coin_collector_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

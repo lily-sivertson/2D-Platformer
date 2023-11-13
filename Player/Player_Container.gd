@@ -10,6 +10,7 @@ func _ready():
 
 func _physics_process(_delta):
 	if not has_node("Player"):
+		Global.set_h_over()
 		var player = Player.instantiate()
 		player.position = starting_position
 		add_child(player)
